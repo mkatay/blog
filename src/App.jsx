@@ -11,6 +11,7 @@ import { Profile } from "./pages/Profile";
 import { NavBar } from "./components/NavBar";
 import { SignInUp } from "./pages/SignInUp";
 import { UserProvider } from "./context/UserContext";
+import { CategProvider } from "./context/CategContext";
 
 
 
@@ -18,6 +19,7 @@ function App() {
   return (
     <BrowserRouter>
     <UserProvider>
+      <CategProvider>
       <div>
         <NavBar />
         <Routes>
@@ -32,6 +34,7 @@ function App() {
           <Route path="*" element={<NotFound />}/>
         </Routes>
       </div>
+      </CategProvider>
       </UserProvider>
     </BrowserRouter>
   );
